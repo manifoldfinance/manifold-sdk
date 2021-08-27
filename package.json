@@ -2,7 +2,7 @@
   "name": "manifold-sdk",
   "version": "0.0.0",
   "description": "",
-  "main": "src/index.ts",
+  "main": "source/index.ts",
   "directories": {
     "doc": "docs"
   },
