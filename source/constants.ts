@@ -20,7 +20,7 @@ export enum ChainId {
 }
 
 
-/***********************************************************\\
+/********************************************************************************************\\
 
 @namespace Manifold
 
@@ -55,10 +55,10 @@ export const FOLD_ABI = {
 
 };
 
-/***********************************************************\\
+/********************************************************************************************\\
 
 
-***********************************************************/
+/********************************************************************************************\\
 
 
 /** 
@@ -68,7 +68,29 @@ export const FOLD_ABI = {
 */
 export const timestampUtc = () => (new Date()).getTime() / 1000; // float seconds
 
+
+/**
+ * @const MaxUint256
+ * @summary 0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ * @type JSBI.bigint 
+*/
 export const MaxUint256 = JSBI.BigInt('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
+
+/**
+ * @const MAX_ENCODED_BIGINT
+ * @summary 2n**256n
+ * @type bigint 
+*/
+
+export const MAX_ENCODED_BIGINT = 115792089237316195423570985008687907853269984665640564039457584007913129639936
+
+/**
+ * @const MAX_ENCODED_NUMBER
+ * @summary 2**53
+ * @type Number 
+*/
+
+export const MAX_ENCODED_NUMBER = 4503599627370496
 
 
 export const NETWORK_TYPE_RPC = 'rpc'
