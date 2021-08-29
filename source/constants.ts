@@ -1,10 +1,12 @@
 /**
- * @fileoverview Manifold Finance Constants and Contracts
- * @author
- * @license
- * @version
- * 
- */
+*
+* @file constants
+* @summary Manifold Finance Constants and Contracts
+* @author Manifold Finance, Inc.
+* @license BSD4
+* @version 0.0.0
+* 
+*/
 
 import JSBI from 'jsbi'
 
@@ -20,11 +22,12 @@ export enum ChainId {
 }
 
 
-/***********************************************************\\
+//********************************************************************************************//
+//
+//  @namespace Manifold Finance 
+//
+//********************************************************************************************//
 
-@namespace Manifold
-
-***********************************************************/
 
 export const functor = {
 
@@ -50,47 +53,117 @@ export const FOLD_TOKEN = {
     }
 };
 
+// @TODO
+// @fixme
+export const MANIFOLD_ERC20_ABI = {
 
-export const FOLD_ABI = {
+};
+// @fixme
+export const MANIFOLD_STAKING_ABI = {
+
+};
+// @fixme
+export const MANIFOLD_GOVERNANCE_ABI = {
+
+};
+// @fixme
+export const MANIFOLD_LIBCALLER_ABI = {
+
+};
+// @fixme
+export const MANIFOLD_REGISTRY_ABI = {
+
+};
+// @fixme
+export const MANIFOLD_PAYOUTS_ABI = {
+
+};
+// @fixme
+export const MANIFOLD_STAKING_ABI = {
 
 };
 
-/***********************************************************\\
 
 
-***********************************************************/
+//********************************************************************************************//
+
+// @fixme
+// safety checks and values
+// timezone constants and math constants
+// 
+
+//********************************************************************************************//
 
 
 /** 
- * @constant timestampUtc
- * @summary UTC timestamp (seconds since 1970-01-01)
-*  @typedef {Date}
+* @constant timestampUtc
+* @summary UTC timestamp (seconds since 1970-01-01)
+* @param timeStapUtc
+* @typeOf {float} seconds
 */
 export const timestampUtc = () => (new Date()).getTime() / 1000; // float seconds
 
+
+/**
+ * @const MaxUint256
+ * @summary Max Uint256 
+ * @type JSBI.bigint 
+*/
 export const MaxUint256 = JSBI.BigInt('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
 
+/**
+ * @const MAX_ENCODED_BIGINT
+ * @summary 2n**256n
+ * @type bigint 
+*/
 
-export const NETWORK_TYPE_RPC = 'rpc'
-export const MAINNET_NETWORK_ID = '1'
-export const ROPSTEN_NETWORK_ID = '3'
-export const RINKEBY_NETWORK_ID = '4'
-export const GOERLI_NETWORK_ID = '5'
-export const KOVAN_NETWORK_ID = '42'
-export const MAINNET_CHAIN_ID = '0x1'
-export const ROPSTEN_CHAIN_ID = '0x3'
-export const RINKEBY_CHAIN_ID = '0x4'
-export const GOERLI_CHAIN_ID = '0x5'
-export const KOVAN_CHAIN_ID = '0x2a'
+export const MAX_ENCODED_BIGINT = 115792089237316195423570985008687907853269984665640564039457584007913129639936
+
+/**
+ * @const MAX_ENCODED_NUMBER
+ * @summary 2**53
+ * @typeOf number 
+*/
+
+export const MAX_ENCODED_NUMBER = 4503599627370496
+
+
+//********************************************************************************************//
+
+@section liveness and readiness 
+
+//********************************************************************************************//
+
+
+/**
+ * @exports NETWORKISH_ID
+ * @summary cannonical chainId
+ * @typeOf {number}
+*/
+
+export const NETWORK_TYPE_RPC  = 'rpc'
+export const MAINNET_NETWORK_ID  = '1'
+export const ROPSTEN_NETWORK_ID  = '3'
+export const RINKEBY_NETWORK_ID  = '4'
+export const GOERLI_NETWORK_ID   = '5'
+export const KOVAN_NETWORK_ID   = '42'
+export const MAINNET_CHAIN_ID   = '0x1'
+export const ROPSTEN_CHAIN_ID   = '0x3'
+export const RINKEBY_CHAIN_ID.  = '0x4'
+export const GOERLI_CHAIN_ID    = '0x5'
+export const KOVAN_CHAIN_ID     = '0x2a'
 
 /**
  * @constant MAX_SAFE_CHAIN_ID
  * @returns 4503599627370476
- * @summary The largest possible chain ID MetaMask can handle
+ * @summary The largest possible chainId MetaMask can handle
  */
 
- export const MAX_SAFE_CHAIN_ID = 4503599627370476
+export const MAX_SAFE_CHAIN_ID = 4503599627370476
 
+// @exports isSafeChainId
+// @param chainId
+// @returns isSafeInteger
 export function isSafeChainId(chainId) {
     return (
       Number.isSafeInteger(chainId) && chainId > 0 && chainId <= MAX_SAFE_CHAIN_ID
@@ -98,7 +171,16 @@ export function isSafeChainId(chainId) {
   }
 
 
-/** 
+
+
+// @fixme
+
+/**
+ * @param
+ * @returns
+ * @type 
+ */
+
 export const CHAIN_ID_TO_TYPE_MAP = Object.entries(
     NETWORK_TYPE_TO_ID_MAP,
   ).reduce((chainIdToTypeMap, [networkType, { chainId }]) => {
@@ -112,7 +194,9 @@ export const CHAIN_ID_TO_TYPE_MAP = Object.entries(
     return chainIdToNetworkIdMap
   }, {})
 
+  
+// @fixme
 export const MAX = {
 "0": ""
 };
-*/
+
