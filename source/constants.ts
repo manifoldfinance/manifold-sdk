@@ -99,6 +99,8 @@ export const MANIFOLD_PROXY_ABI = {
 // timezone constants and math constants
 //********************************************************************************************//
 
+export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
+
 export const MAX_SAFE_CHAIN_ID = 4503599627370476
 
 // @exports isSafeChainId
