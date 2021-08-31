@@ -1,0 +1,177 @@
+@startuml
+' -- options --
+
+
+
+' -- classes --
+
+
+class Context {
+    ' -- inheritance --
+
+    ' -- usingFor --
+
+    ' -- vars --
+
+    ' -- methods --
+	#🔍_msgSender()
+	#🔍_msgData()
+
+}
+
+
+abstract SafeMath {
+    ' -- inheritance --
+
+    ' -- usingFor --
+
+    ' -- vars --
+
+    ' -- methods --
+	#🔍tryAdd()
+	#🔍trySub()
+	#🔍tryMul()
+	#🔍tryDiv()
+	#🔍tryMod()
+	#🔍add()
+	#🔍sub()
+	#🔍mul()
+	#🔍div()
+	#🔍mod()
+	#🔍sub()
+	#🔍div()
+	#🔍mod()
+
+}
+
+
+abstract Address {
+    ' -- inheritance --
+
+    ' -- usingFor --
+
+    ' -- vars --
+
+    ' -- methods --
+	#🔍isContract()
+	#sendValue()
+	#functionCall()
+	#functionCall()
+	#functionCallWithValue()
+	#functionCallWithValue()
+	#🔍functionStaticCall()
+	#🔍functionStaticCall()
+	#functionDelegateCall()
+	#functionDelegateCall()
+	-🔍_verifyCallResult()
+
+}
+
+
+interface IERC20 {
+    ' -- inheritance --
+
+    ' -- usingFor --
+
+    ' -- vars --
+
+    ' -- methods --
+	+🔍totalSupply()
+	+🔍balanceOf()
+	+🔍allowance()
+	+approve()
+	+🔍name()
+	+🔍symbol()
+	+🔍decimals()
+	+permit()
+
+}
+
+
+class ERC20 {
+    ' -- inheritance --
+	{abstract}IERC20
+	{abstract}Context
+
+    ' -- usingFor --
+	{abstract}📚SafeMath for [[uint256]]
+	{abstract}📚Address for [[address]]
+
+    ' -- vars --
+	+[[bytes32]] DOMAIN_SEPARATOR
+	-[[mapping address=>uint256 ]] _balances
+	+[[mapping address=>uint256 ]] nonces
+	-[[mapping address=>mapping address=>uint256  ]] _allowances
+	-[[uint256]] _totalSupply
+	-[[string]] _name
+	-[[string]] _symbol
+	-[[uint8]] _decimals
+	-[[bool]] _initialized
+	-{static}[[string]] EIP191_PREFIX_FOR_EIP712_STRUCTURED_DATA
+	-{static}[[bytes32]] PERMIT_SIGNATURE_HASH
+
+    ' -- methods --
+	#_initERC20()
+	+🔍name()
+	+🔍symbol()
+	+🔍decimals()
+	+🔍totalSupply()
+	+🔍balanceOf()
+	+transfer()
+	+🔍allowance()
+	+approve()
+	+permit()
+	+transferFrom()
+	+increaseAllowance()
+	+decreaseAllowance()
+	#_transfer()
+	#_mint()
+	#_burn()
+	#_approve()
+	#_setupDecimals()
+	#_beforeTokenTransfer()
+
+}
+
+
+interface IMisoToken {
+    ' -- inheritance --
+
+    ' -- usingFor --
+
+    ' -- vars --
+
+    ' -- methods --
+	+💰init()
+	+initToken()
+	+🔍tokenTemplate()
+
+}
+
+
+class FixedToken {
+    ' -- inheritance --
+	{abstract}ERC20
+	{abstract}IMisoToken
+
+    ' -- usingFor --
+
+    ' -- vars --
+	+{static}[[uint256]] tokenTemplate
+
+    ' -- methods --
+	+initToken()
+	+💰init()
+	+initToken()
+	+🔍getInitData()
+
+}
+' -- inheritance / usingFor --
+ERC20 --[#DarkGoldenRod]|> IERC20
+ERC20 --[#DarkGoldenRod]|> Context
+ERC20 ..[#DarkOliveGreen]|> SafeMath : //for uint256//
+ERC20 ..[#DarkOliveGreen]|> Address : //for address//
+FixedToken --[#DarkGoldenRod]|> ERC20
+FixedToken --[#DarkGoldenRod]|> IMisoToken
+
+@enduml

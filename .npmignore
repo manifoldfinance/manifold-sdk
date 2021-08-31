@@ -1,3 +1,4 @@
 *.sh
 .github/
-
+docs/
+.vscode/

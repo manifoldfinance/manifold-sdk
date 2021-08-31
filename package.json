@@ -2,12 +2,13 @@
   "name": "manifold-sdk",
   "version": "0.0.0",
   "description": "",
+  "private": true,
   "main": "source/index.ts",
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "src": "source"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Manifold Finance, Inc. <ops@manifoldfinance.com>",

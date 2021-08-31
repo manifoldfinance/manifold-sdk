@@ -1,5 +1,4 @@
 /**
-*
 * @file constants
 * @summary Manifold Finance Constants and Contracts
 * @author Manifold Finance, Inc.
@@ -8,6 +7,7 @@
 * 
 */
 
+import { Hexable } from '@ethersproject/bytes';
 import JSBI from 'jsbi'
 
 // exports for external consumption
@@ -21,6 +21,13 @@ export enum ChainId {
   KOVAN = 42
 }
 
+/**
+ * @copyright
+ * @version
+ * @package 
+ */
+
+
 
 //********************************************************************************************//
 //
@@ -28,9 +35,7 @@ export enum ChainId {
 //
 //********************************************************************************************//
 
-
-export const functor = {
-
+export const manifol = {
 };
 
 export const multisig = [
@@ -53,11 +58,15 @@ export const FOLD_TOKEN = {
     }
 };
 
+export const MANIFOLD_ERC20 = FOLD_TOKEN
+
 // @TODO
 // @fixme
-export const MANIFOLD_ERC20_ABI = {
+export const FOLD_ERC20_ABI = {
 
 };
+export const MANIFOLD_ERC20_ABI = FOLD_ERC20_ABI
+
 // @fixme
 export const MANIFOLD_STAKING_ABI = {
 
@@ -79,22 +88,29 @@ export const MANIFOLD_PAYOUTS_ABI = {
 
 };
 // @fixme
-export const MANIFOLD_STAKING_ABI = {
+export const MANIFOLD_PROXY_ABI = {
 
 };
 
-
-
 //********************************************************************************************//
-
 // @fixme
+// SafeChainId
 // safety checks and values
 // timezone constants and math constants
-// 
-
 //********************************************************************************************//
 
+export const MAX_SAFE_CHAIN_ID = 4503599627370476
 
+// @exports isSafeChainId
+// @param chainId
+// @returns isSafeInteger
+export function isSafeChainId(chainId: number) {
+    return (
+      Number.isSafeInteger(chainId) && chainId > 0 && chainId <= MAX_SAFE_CHAIN_ID
+    )
+  }
+
+  
 /** 
 * @constant timestampUtc
 * @summary UTC timestamp (seconds since 1970-01-01)
@@ -103,21 +119,19 @@ export const MANIFOLD_STAKING_ABI = {
 */
 export const timestampUtc = () => (new Date()).getTime() / 1000; // float seconds
 
-
 /**
  * @const MaxUint256
  * @summary Max Uint256 
  * @type JSBI.bigint 
 */
-export const MaxUint256 = JSBI.BigInt('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
-
+// export const MaxUint256: JSBI.bigint = JSBI.BigInt('0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff')
+// export const MAX_INT = 115792089237316195423570985008687907853269984665640564039457584007913129639935
 /**
  * @const MAX_ENCODED_BIGINT
  * @summary 2n**256n
  * @type bigint 
 */
-
-export const MAX_ENCODED_BIGINT = 115792089237316195423570985008687907853269984665640564039457584007913129639936
+// export const MAX_ENCODED_BIGINT: bigint = 115792089237316195423570985008687907853269984665640564039457584007913129639936
 
 /**
  * @const MAX_ENCODED_NUMBER
@@ -127,51 +141,31 @@ export const MAX_ENCODED_BIGINT = 1157920892373161954235709850086879078532699846
 
 export const MAX_ENCODED_NUMBER = 4503599627370496
 
-
-//********************************************************************************************//
-
-@section liveness and readiness 
-
-//********************************************************************************************//
-
-
 /**
  * @exports NETWORKISH_ID
- * @summary cannonical chainId
+ * @summary canonical chainId
  * @typeOf {number}
 */
 
-export const NETWORK_TYPE_RPC  = 'rpc'
+export const NETWORK_TYPE_RPC    = 'rpc'
+/**  @note networkId is pathological  */
 export const MAINNET_NETWORK_ID  = '1'
 export const ROPSTEN_NETWORK_ID  = '3'
 export const RINKEBY_NETWORK_ID  = '4'
 export const GOERLI_NETWORK_ID   = '5'
-export const KOVAN_NETWORK_ID   = '42'
-export const MAINNET_CHAIN_ID   = '0x1'
-export const ROPSTEN_CHAIN_ID   = '0x3'
-export const RINKEBY_CHAIN_ID.  = '0x4'
-export const GOERLI_CHAIN_ID    = '0x5'
-export const KOVAN_CHAIN_ID     = '0x2a'
+export const KOVAN_NETWORK_ID    = '42'
+
+export const MAINNET_CHAIN_ID    = '0x1'
+export const ROPSTEN_CHAIN_ID    = '0x3'
+export const RINKEBY_CHAIN_ID    = '0x4'
+export const GOERLI_CHAIN_ID     = '0x5'
+export const KOVAN_CHAIN_ID      = '0x2a'
 
 /**
  * @constant MAX_SAFE_CHAIN_ID
  * @returns 4503599627370476
  * @summary The largest possible chainId MetaMask can handle
  */
-
-export const MAX_SAFE_CHAIN_ID = 4503599627370476
-
-// @exports isSafeChainId
-// @param chainId
-// @returns isSafeInteger
-export function isSafeChainId(chainId) {
-    return (
-      Number.isSafeInteger(chainId) && chainId > 0 && chainId <= MAX_SAFE_CHAIN_ID
-    )
-  }
-
-
-
 
 // @fixme
 
@@ -180,6 +174,11 @@ export function isSafeChainId(chainId) {
  * @returns
  * @type 
  */
+
+
+ function NETWORK_TYPE_TO_ID_MAP(NETWORK_TYPE_TO_ID_MAP: any) {
+  throw new Error('Function not implemented.');
+}
 
 export const CHAIN_ID_TO_TYPE_MAP = Object.entries(
     NETWORK_TYPE_TO_ID_MAP,
@@ -196,7 +195,6 @@ export const CHAIN_ID_TO_TYPE_MAP = Object.entries(
 
   
 // @fixme
-export const MAX = {
-"0": ""
-};
-
+// export const MAX = {
+// "0": ""
+// };

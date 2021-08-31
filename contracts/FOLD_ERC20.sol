@@ -1,8 +1,6 @@
-/**
- *Submitted for verification at Etherscan.io on 2021-05-17
-*/
-
-// Sources flattened with hardhat v2.3.0 https://hardhat.org
+/// SPDX-License-Identifier: GPL-3.0
+/// @title Manifold Finance ERC20 Token
+// @note Sources flattened with hardhat v2.3.0 https://hardhat.org
 
 // File contracts/OpenZeppelin/utils/Context.sol
 
