@@ -35,8 +35,9 @@ export enum ChainId {
 //
 //********************************************************************************************//
 
-export const manifol = {
-};
+
+
+// export const [] = {};
 
 export const multisig = [
 '0x72cbdeaadddd14ec95b92995933cec69566650f0'
@@ -92,6 +93,8 @@ export const MANIFOLD_PROXY_ABI = {
 
 };
 
+
+
 //********************************************************************************************//
 // @fixme
 // SafeChainId
@@ -100,6 +103,10 @@ export const MANIFOLD_PROXY_ABI = {
 //********************************************************************************************//
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
+export const ADDRESS_ZERO_PADDED = '0x0000000000000000000000000000000000000000000000000000000000000000';
+export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000';
+export const DUMMY_ADDRESS = '0x0000000000000000000000000000000000000001';
+
 
 export const MAX_SAFE_CHAIN_ID = 4503599627370476
 
