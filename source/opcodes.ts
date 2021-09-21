@@ -1,9 +1,14 @@
+/** 
+* @file OpCodes
+* @summary EVM OpCodes
+* @version London
+*/
 
 const codes = {
-    /** 
-     * @note 0x0 range - arithmetic ops
-     * @param name, baseCost, off stack, on stack, dynamic, async 
-    */
+/** 
+* @note 0x0 range - arithmetic ops
+* @param name, baseCost, off stack, on stack, dynamic, async 
+*/
         0x00: ['STOP', 0, 0, 0, false],
         0x01: ['ADD', 3, 2, 1, false],
         0x02: ['MUL', 5, 2, 1, false],
@@ -184,5 +189,4 @@ module.exports = function (op, full) {
         }
       
         return {name: opcode, opcode: op, fee: code[1], in: code[2], out: code[3], dynamic: code[4], async: code[5]}
-    }
-
+}
