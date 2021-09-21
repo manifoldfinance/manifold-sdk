@@ -8,7 +8,6 @@
 import { ethers } from 'ethers';
 import * as eth from './eth';
 import * as util from './util';
-import * as auftragstaktik from './auftragstaktik';
 import * as cToken from './cToken';
 import * as priceFeed from './priceFeed';
 import * as fold from './fold';
@@ -62,7 +61,6 @@ const Manifold = function(
   const instance: any = {
     _originalProvider: originalProvider,
     _provider: provider,
-    ...auftragstaktik,
     ...cToken,
     ...priceFeed,
     ...gov,
