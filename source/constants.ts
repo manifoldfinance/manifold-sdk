@@ -59,6 +59,15 @@ export const FOLD_TOKEN = {
     }
 };
 
+/**
+*
+* @summary JavaScript engine analysis
+* @exports sdkCanary 
+*/
+
+export const sdkCanary = 0xdeadbeefcafe;
+export const sdk_lm = (sdkCanary & 0xffffff) == 0xefcafe;
+
 export const MANIFOLD_ERC20 = FOLD_TOKEN
 
 // @TODO
