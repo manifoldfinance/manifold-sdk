@@ -1,7 +1,7 @@
-pragma solidity =0.6.2;
+pragma solidity 0.6.12;
 
-import '@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol';
-import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
+import './IUniswapV2Factory.sol';
+import '../kernel/TransferHelper.sol';
 
 import './interfaces/IUniswapV2Router02.sol';
 import './libraries/UniswapV2Library.sol';

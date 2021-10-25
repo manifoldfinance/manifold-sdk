@@ -1,27 +1,25 @@
 {
-  "name": "solidity-project",
+  "name": "@manifoldfinance/libsol",
   "version": "0.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
-  "scripts": {
-  },
-  "files": [
-    "/contracts/**/*.sol",
-    "/build/contracts/*.json",
-    "!/contracts/mocks/**/*"
-  ],
   "scripts": {
     "tsc": "npx tsc -b",
     "compile": "npx hardhat compile",
     "coverage": "npx hardhat coverage",
     "test": "npx hardhat test",
     "lint": "npx gts lint",
-    "format": "npx prettier --config prettier.config.js --write .",
     "clean": "npx gts clean",
     "fix": "npx gts fix"
   },
+  "files": [
+    "/contracts/**/*.sol",
+    "/build/contracts/*.json",
+    "!/contracts/mocks/**/*"
+  ],
   "keywords": [],
-  "author": "sam bacha",
+  "author": "SEE CONTRIBUTORS",
   "license": "SEE LICENSE IN LICENSE",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.2",
@@ -40,5 +38,8 @@
     "ts-node": "^10.3.0",
     "typechain": "^5.1.2",
     "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.2"
   }
 }

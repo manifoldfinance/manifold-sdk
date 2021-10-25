@@ -1,6 +1,6 @@
-pragma solidity =0.6.2;
+pragma solidity 0.6.12;
 
-import '../interfaces/IUniswapV2Router01.sol';
+import './IUniswapV2Router01.sol';
 
 contract RouterEventEmitter {
     event Amounts(uint[] amounts);

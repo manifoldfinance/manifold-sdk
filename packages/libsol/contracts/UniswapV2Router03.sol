@@ -1,9 +1,9 @@
-pragma solidity 0.6.2;
+pragma solidity 0.6.12;
 pragma experimental ABIEncoderV2;
 
-import "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol";
-import "@uniswap/lib/contracts/libraries/TransferHelper.sol";
-import "@openzeppelin/contracts/cryptography/ECDSA.sol";
+import "./IUniswapV2Factory.sol";
+import "../kernel/TransferHelper.sol";
+import "./ECDSA.sol";
 
 import "./libraries/UniswapV2Library.sol";
 import "./libraries/SafeMath.sol";
