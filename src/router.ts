@@ -1,3 +1,12 @@
+/**  
+ *  @package @manifoldx/sdk
+ *  @version 0.0.0 
+ * 
+ * 
+ * 
+ */
+
+
 import {
   Token,
   Currency,
@@ -37,7 +46,7 @@ export interface TradeOptions {
 export interface TradeOptionsDeadline extends Omit<TradeOptions, 'ttl'> {
   /**
    * When the transaction expires.
-   * This is an atlernate to specifying the ttl, for when you do not want to use local time.
+   * This is an alternate to specifying the ttl, for when you do not want to use local time.
    */
   deadline: number;
 }
