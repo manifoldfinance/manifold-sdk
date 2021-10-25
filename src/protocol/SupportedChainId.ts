@@ -6,9 +6,8 @@ export enum SupportedChainId {
 }
 
 export const ALL_SUPPORTED_CHAIN_IDS: SupportedChainId[] = [
-    SupportedChainId.MAINNET,
-    SupportedChainId.ROPSTEN,
-    SupportedChainId.RINKEBY,
-    SupportedChainId.GOERLI,
-
-]
+  SupportedChainId.MAINNET,
+  SupportedChainId.ROPSTEN,
+  SupportedChainId.RINKEBY,
+  SupportedChainId.GOERLI,
+];

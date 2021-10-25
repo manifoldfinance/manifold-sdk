@@ -1,24 +1,47 @@
 {
   "name": "manifold-sdk",
   "version": "0.0.0",
-  "description": "",
+  "description": "Manifold Finance SDK",
   "private": true,
-  "main": "source/index.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files":[ "src/protocol/index.ts"],
   "directories": {
     "doc": "docs",
-    "src": "source"
+    "src": "src"
   },
   "scripts": {
   },
-  "keywords": [],
+  "keywords": ["ethereum", "manifold finance", "defi", "solidity", "sdk", "decentralized finance", "mev", "flashbots"],
   "author": "Manifold Finance, Inc. <ops@manifoldfinance.com>",
   "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sambacha/unisdk-manifold.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sambacha/unisdk-manifold/issues"
+  },
+  "homepage": "https://github.com/sambacha/unisdk-manifold#readme",
+  "dependencies": {
+    "@ethersproject/address": "^5.5.0",
+    "@ethersproject/solidity": "^5.5.0",
+    "tiny-invariant": "^1.1.0",
+    "tiny-warning": "^1.0.3"
+  },
   "devDependencies": {
+    "@types/big.js": "^6.1.2",
+    "@types/node": "^14.17.29",
+    "@typescript-eslint/eslint-plugin": "^5.1.0",
+    "@typescript-eslint/parser": "^5.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^3.9.10",
     "dotenv": "^10.0.0",
     "jsbi": "^3.2.1",
-    "prettier": "^2.3.2",
-    "prettier-plugin-solidity": "^1.0.0-beta.17",
-    "solc": "^0.6.12",
-    "solidity-docgen": "^0.5.13"
+    "solc": "^0.6.12"
   }
 }

@@ -1,4 +1,3 @@
-
 /**
  * @file Manifold
  * @desc This file defines the constructor of the `Manifold` class.
@@ -29,18 +28,18 @@ ethers.utils.Logger.setLogLevel(ethers.utils.Logger.levels.ERROR);
  * @example
  * ```
  * var foldound = new Manifold(window.ethereum); // web browser
- * 
+ *
  * var foldound = new Manifold('http://127.0.0.1:8545'); // HTTP provider
- * 
+ *
  * var foldound = new Manifold(); // Uses Ethers.js fallback mainnet (for testing only)
- * 
+ *
  * var foldound = new Manifold('ropsten'); // Uses Ethers.js fallback (for testing only)
- * 
+ *
  * // Init with private key (server side)
  * var foldound = new Manifold('https://mainnet.infura.io/v3/_your_project_id_', {
  *   privateKey: '0x_your_private_key_', // preferably with environment variable
  * });
- * 
+ *
  * // Init with HD mnemonic (server side)
  * var foldound = new Manifold('mainnet' {
  *   mnemonic: 'clutch captain shoe...', // preferably with environment variable
@@ -49,9 +48,10 @@ ethers.utils.Logger.setLogLevel(ethers.utils.Logger.levels.ERROR);
  *
  * @returns {object} Returns an instance of the Manifold.js SDK.
  */
-const Manifold = function(
-  provider: Provider | string = 'mainnet', options: ManifoldOptions = {}
-) : ManifoldInstance {
+const Manifold = function (
+  provider: Provider | string = 'mainnet',
+  options: ManifoldOptions = {},
+): ManifoldInstance {
   const originalProvider = provider;
 
   options.provider = provider || options.provider;
@@ -72,10 +72,12 @@ const Manifold = function(
 
   // Instance needs to know which network the provider connects to, so it can
   //     use the correct contract addresses.
-  instance._networkPromise = eth.getProviderNetwork(provider).then((network) => {
-    delete instance._networkPromise;
-    instance._network = network;
-  });
+  instance._networkPromise = eth
+    .getProviderNetwork(provider)
+    .then((network) => {
+      delete instance._networkPromise;
+      instance._network = network;
+    });
 
   return instance;
 };

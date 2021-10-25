@@ -1,13 +1,12 @@
-
 export const fetchTextSignatures = async (
-  methodSignature: string
+  methodSignature: string,
 ): Promise<string[]> => {
   const url = new URL('/api/v1/signatures', 'https://www.4byte.directory');
   url.searchParams.set('hex_signature', methodSignature);
   url.searchParams.set('ordering', 'created_at');
   const response = await fetch(url.toString());
   const { results } = await response.json();
-  return results.map(signature => signature.text_signature);
+  return results.map((signature) => signature.text_signature);
 };
 
 const getMethodSignature = (data: string) => {
@@ -20,7 +19,7 @@ const getMethodSignature = (data: string) => {
 
 export const decodeContractTransaction = async (
   network: string,
-  transaction: ModuleTransaction
+  transaction: ModuleTransaction,
 ): Promise<ContractInteractionModuleTransaction> => {
   const decode = (abi: string | FunctionFragment[]) => {
     const contractInterface = new InterfaceDecoder(abi);
@@ -31,7 +30,7 @@ export const decodeContractTransaction = async (
       nonce: 0,
       to: transaction.to,
       value: transaction.value,
-      method
+      method,
     });
   };
 
@@ -58,7 +57,7 @@ export const isERC20TransferTransaction = (transaction: ModuleTransaction) => {
 };
 
 export const decodeERC721TransferTransaction = (
-  transaction: ModuleTransaction
+  transaction: ModuleTransaction,
 ) => {
   const erc721ContractInterface = new InterfaceDecoder(ERC721ContractABI);
   try {
@@ -70,7 +69,7 @@ export const decodeERC721TransferTransaction = (
 
 export const decodeTransactionData = async (
   network: string,
-  transaction: ModuleTransaction
+  transaction: ModuleTransaction,
 ) => {
   if (!transaction.data || transaction.data === '0x') {
     return transferFundsToModuleTransaction({
@@ -78,7 +77,7 @@ export const decodeTransactionData = async (
       amount: transaction.value,
       data: '0x',
       token: ETHEREUM_COIN,
-      nonce: 0
+      nonce: 0,
     });
   }
 
@@ -92,9 +91,10 @@ export const decodeTransactionData = async (
         amount: params[1],
         data: transaction.data,
         nonce: 0,
-        token
+        token,
       });
     } catch (e) {
       console.warn('invalid ERC20 transfer transaction');
     }
   }
+};

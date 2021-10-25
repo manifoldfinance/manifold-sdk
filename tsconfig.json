@@ -1,17 +1,28 @@
 {
+  "include": ["src", "test"],
   "compilerOptions": {
-    "target": "ES2017",
-    "module": "commonjs",
+    "target": "es2018",
+    "module": "esnext",
+    "importHelpers": true,
     "declaration": true,
-    "declarationMap": true,
     "sourceMap": true,
-    "outDir": "./dist",
-    "strict": false,
-    "rootDirs": ["./src"],
-    "esModuleInterop": true
-  },
-  "exclude": ["dist", "node_modules", "./test", "./source/index.d.ts"],
-  "include": [
-    "./source"
-  ]
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "*": ["src/*", "node_modules/*"]
+    },
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  }
 }
