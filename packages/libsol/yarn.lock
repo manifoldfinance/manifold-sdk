@@ -3589,7 +3589,7 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prettier-config-solidity@1.6.1:
+prettier-config-solidity@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/prettier-config-solidity/-/prettier-config-solidity-1.6.1.tgz#c158e4edde7b84133a5fcbdf82cb41b7eb9de80e"
   integrity sha512-bYj/inDHJBNkV3t3+Y+mHMcTl8AIL7g1xfxFRuhYVYRE3EOEtpitm5QyU7OKkD4mbV1MtQ6fMlCxYKR0kz9Hng==
@@ -3613,7 +3613,7 @@ prettier-plugin-solidity@^1.0.0-beta.18:
     solidity-comments-extractor "^0.0.7"
     string-width "^4.2.2"
 
-prettier@2.4.1, prettier@^2.1.2:
+prettier@^2.1.2, prettier@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
   integrity sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==

@@ -1,0 +1,12 @@
+.DS_Store
+node_modules
+artifacts
+cache
+coverage
+coverage.json
+build
+dist
+.coverage_contracts
+.coverage_artifacts
+.env
+.idea
