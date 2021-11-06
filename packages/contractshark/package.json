@@ -26,9 +26,7 @@
     "solhint": "^3.3.6",
     "solidity-coverage": "^0.7.17"
   },
-  "bin": {
-    "docify": "utils/docify.utils.js"
-  },
+  "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "coverage": "hardhat coverage",
     "test": "hardhat test"
