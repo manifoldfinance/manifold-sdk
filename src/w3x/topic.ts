@@ -1,4 +1,5 @@
 /**
+ * @filename topic
  * Returns true if given string is a valid log topic.
  *
  * TODO UNDOCUMENTED
