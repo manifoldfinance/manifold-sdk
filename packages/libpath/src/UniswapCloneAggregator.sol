@@ -1,9 +1,10 @@
-pragma solidity ^0.6.6;
+/// SPDX-License-Identifier: GPL-2.0-Only
+pragma solidity >=0.6.12;
 pragma experimental ABIEncoderV2;
 
-import './interfaces/IUniswapClonePair.sol';
-import './interfaces/IWETH.sol';
-import './helpers/TransferHelper.sol';
+import './IUniswapClonePair.sol';
+import './IWETH.sol';
+import './TransferHelper.sol';
 import "@openzeppelin/contracts/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
